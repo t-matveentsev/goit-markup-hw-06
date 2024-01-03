@@ -1,3 +1,6 @@
+.hidden {
+  display: none;
+}
 body {
   font-family: "Roboto", sans-serif;
   background-color: #fff;
@@ -44,20 +47,37 @@ button {
   cursor: pointer;
 }
 
-/* відступи кожної секції */
+/* відступи між секціями */
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 /* правило для усіх секцій */
 .container {
-  max-width: 1158px;
+  /* max-width: 1158px;
   padding: 0 15px;
+  margin: 0 auto; */
+  max-width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 .visually-hidden {
   position: absolute;
@@ -156,7 +176,6 @@ button {
 /* #region ================================main-page */
 
 .main-page {
-  padding: 188px 0;
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
@@ -169,18 +188,46 @@ button {
   background-size: cover;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 72px 0;
 }
-
+@media only screen and (min-width: 768px) {
+  .main-page {
+    padding: 112px 0;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .main-page {
+    padding: 188px 0;
+  }
+}
 .main-title {
-  max-width: 496px;
-  color: white;
-  font-size: 56px;
-  line-height: 1.07;
-  letter-spacing: 1.12px;
+  max-width: 288px;
+  color: #fff;
   text-align: center;
-  display: block;
-  margin: auto;
-  margin-bottom: 48px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .main-title {
+    display: block;
+    margin: auto;
+    max-width: 496px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 1.12px;
+    margin-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .main-title {
+    font-size: 56px;
+    margin-bottom: 48px;
+  }
 }
 
 .main-button {
@@ -210,13 +257,25 @@ button {
 }
 .list-ben {
   display: flex;
+  flex-wrap: wrap;
+  gap: 72px;
   align-items: center;
-  gap: 24px;
 }
-.item-ben {
-  background-color: #fff;
-  width: calc((100% - 72px) / 4);
+@media only screen and (min-width: 768px) {
+  .list-ben {
+    gap: 24px;
+  }
+  .item-ben {
+    width: calc((100% - 24px) / 2);
+  }
 }
+
+@media only screen and (min-width: 1158px) {
+  .item-ben {
+    width: calc((100% - 72px) / 4);
+  }
+}
+
 .icon-box {
   display: flex;
   background-color: #f4f4fd;
@@ -228,17 +287,47 @@ button {
   align-items: center;
   margin-bottom: 8px;
 }
+@media only screen and (max-width: 1158px) {
+  .icon-box {
+    display: none;
+  }
+}
 
 .title-ben {
   margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.4px;
+
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+}
+
+@media only screen and (max-width: 768px) {
+  .title-ben {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .title-ben {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
 }
 .text-ben {
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  /* line-height: 24px;
+  letter-spacing: 0.32px; */
+  color: #434455;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+@media only screen and (min-width: 1158px) {
+  .text-ben {
+    font-weight: 400;
+  }
 }
 /* #endregion benefits */
 
@@ -752,6 +841,9 @@ button {
   border-color: #4d5ae5;
 }
 
+.ceckbox:focus + .form-agreement > .form-agreement-checkbox {
+  border-color: #4d5ae5;
+}
 .checkbox:checked + .form-agreement > .form-agreement-checkbox {
   background-color: #404bbf;
   border-color: transparent;
