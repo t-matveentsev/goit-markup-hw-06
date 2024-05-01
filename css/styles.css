@@ -456,7 +456,6 @@ button {
 }
 .title-list {
   font-size: 20px;
-  font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.4px;
   margin-bottom: 8px;
@@ -620,7 +619,7 @@ button {
   font-weight: 700;
   line-height: 1.17;
   letter-spacing: 0.54px;
-  font-family: "Raleway";
+  font-family: "Raleway" sans-serif;
   text-transform: uppercase;
 }
 .span-footer {
